@@ -8,7 +8,15 @@ function PokemonList() {
 
     async function downloadPokemons() {
         const response = await axios.get(POKEDEX_URL);
-        console.log(response);
+        // console.log(response);
+        const pokemonResult = response.data.results;//Array of first 20 pokemons
+
+        const pokemonPromise = pokemonResult.map(( pokemon) => axios.get(pokemon.url))
+        // console.log(pokemonPromise);
+
+        const pokeListData = await axios.all(pokemonPromise)
+        console.log(pokeListData);
+
     }
     useEffect(() => {
      downloadPokemons()
