@@ -6,8 +6,8 @@ function Search() {
     return(
       <div >
           <input
-          // id="search-pokemon"
-          className=' w-1/2 outline-emerald-600 m-10 '
+          id="search-pokemon"
+          
               
               type="text"
               placeholder="Which Pokemon you are looking for?"

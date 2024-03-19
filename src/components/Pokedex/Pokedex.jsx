@@ -1,9 +1,10 @@
 import Search from "../Search/Search"
+import './Pokedex.css'
 
 function Pokedex() {
   return (
-    <div className="">
-      <h1 className=" text-3xl font-bold">Pokedex</h1>
+    <div className="pokedex-wrapper">
+      <h1>Pokedex</h1>
       <Search/>
     </div>
   )
