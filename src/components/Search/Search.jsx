@@ -4,7 +4,7 @@ import './search.css'
 
 function Search() {
     return(
-      <div >
+      <div className='SearchBox' >
           <input
           id="search-pokemon"
           
