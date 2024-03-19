@@ -10,7 +10,7 @@ function Search() {
           
               
               type="text"
-              placeholder="Which Pokemon you are looking for?"
+              placeholder="Which Pokemon are you  looking for?"
           />
     </div>
   )
