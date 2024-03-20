@@ -41,8 +41,10 @@ function PokemonList() {
     return (
         <div className='pokeListWrapper'>
             <div>Pokemon List</div>
+            <div className='poke-list'>
             {pokeList.map( pokemon=> < Pokemon
-            name={pokemon.name} key={pokemon.id} url={pokemon.image}/>)}
+                name={pokemon.name} key={pokemon.id} url={pokemon.image} />)}
+                </div>
         </div>
     )
 }
