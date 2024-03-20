@@ -2,5 +2,18 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
+.pokeListWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#poke-header{
+margin-top: 3rem;
+font-size: x-large;
+font-weight: bold;
+letter-spacing: 5px;
+}
+

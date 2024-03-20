@@ -3,9 +3,9 @@ import './Pokemon.css'
 function Pokemon({name,url}) {
   return (
       <div className='pokemon'>
-          <div>{name}</div>
+          <div className='poke-name'>{name}</div>
           <div>
-              <img src={url} alt="" />
+              <img className='poke-image' src={url} alt="" />
           </div>
     </div>
   )
