@@ -41,6 +41,11 @@ function PokemonList() {
     return (
         <div className='pokeListWrapper'>
             <div id='poke-header'>Pokemon List</div>
+
+            <div className='page-control'>
+                <button>Prev</button>
+                <button>Next</button>
+            </div>
             <div className='poke-list'>
             {pokeList.map( pokemon=> < Pokemon
                 name={pokemon.name} key={pokemon.id} url={pokemon.image} />)}
