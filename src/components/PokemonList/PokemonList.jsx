@@ -5,13 +5,21 @@ import axios from 'axios';
 import Pokemon from '../Pokemon/Pokemon';
 
 function PokemonList() {
+    const DEFAULT_URL = 'https://pokeapi.co/api/v2/pokemon'
+    
     const [pokeList, setPokeList] = useState([]);
-    const POKEDEX_URL = 'https://pokeapi.co/api/v2/pokemon';
+    const [pokedexurl, setPokedexurl] = useState(DEFAULT_URL);
+    
+    const [nextURL, setNextUrl] = useState(DEFAULT_URL)
+    const [prevURL, setPrevUrl] = useState(DEFAULT_URL)
 
     async function downloadPokemons() {
-        const response = await axios.get(POKEDEX_URL);
+        const response = await axios.get(pokedexurl?pokedexurl:DEFAULT_URL);
         // console.log(response);
         const pokemonResult = response.data.results;
+        setNextUrl(response.data.next);
+        setPrevUrl(response.data.previous)
+
 
         //Array of first 20 pokemons
 
@@ -36,15 +44,15 @@ function PokemonList() {
     }
     useEffect(() => {
      downloadPokemons()
-    },[])
+    },[pokedexurl])
     
     return (
         <div className='pokeListWrapper'>
             <div id='poke-header'>Pokemon List</div>
 
             <div className='page-control'>
-                <button>Prev</button>
-                <button>Next</button>
+                <button onClick={()=>setPokedexurl(prevURL)}>Prev</button>
+                <button onClick={()=>setPokedexurl(nextURL)}>Next</button>
             </div>
             <div className='poke-list'>
             {pokeList.map( pokemon=> < Pokemon

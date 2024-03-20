@@ -4,9 +4,9 @@ function Pokemon({name,url}) {
   return (
       <div className='pokemon'>
           <div className='poke-name'>{name}</div>
-          <div>
+         
               <img className='poke-image' src={url} alt="" />
-          </div>
+          
     </div>
   )
 }
