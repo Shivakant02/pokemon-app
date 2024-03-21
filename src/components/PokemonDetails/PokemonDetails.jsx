@@ -1,4 +1,5 @@
 // import React from 'react'
+import { Link } from 'react-router-dom';
 import { useEffect } from 'react'
 import './PokemonDetails.css'
 import { useParams } from 'react-router-dom'
@@ -32,21 +33,29 @@ function PokemonDetails() {
         downloadPokemon()
     },[])
     return (
-        pokemon && <div className='poke-details-wrapper'>
-            <div>
-                {pokemon.name}
-            </div>
-            <div>
-                <img src={pokemon.image} alt="" />
-            </div>
-            <div>
-                Height: {pokemon.height}
-                Weight: {pokemon.weight}
-            </div>
-            <div>
-                Type: {pokemon.types.map(t => <span key={t.type.name} >{ t.type.name}</span>)}
-            </div>
-      </div>
+        <>
+            <h1>
+                <Link to="/">
+                Pokedex
+                </Link>
+            </h1>
+
+            {pokemon && <div className='poke-details-wrapper'>
+                <div className='poke-name'>
+                    {pokemon.name}
+                </div>
+                <div className='poke-image'>
+                    <img src={pokemon.image} alt="" />
+                </div>
+                <div className='poke-attr'>
+                   <div> Height: {pokemon.height}</div>
+                   <div> Weight: {pokemon.weight} </div>
+                </div>
+                <div className='poke-type'>
+                    Type: {pokemon.types.map(t => <span className='type' key={t.type.name} >{t.type.name}</span>)}
+                </div>
+            </div>}
+            </>
   )
 }
 

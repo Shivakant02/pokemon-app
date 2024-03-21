@@ -1,0 +1,29 @@
+.poke-details-wrapper{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; 
+}
+
+
+.poke-attr{
+    
+    display: flex;
+    font-size: x-large;
+    gap: 2rem;
+    
+}
+.poke-type{
+    font-size: x-large;
+    text-transform: capitalize;
+}
+
+.type{
+   font-size: x-large;
+   border: 1px solid gray;
+   border-radius: 10px;
+   padding: 1rem 2rem;
+   background-color: azure;
+   margin-left: 1rem;
+}
