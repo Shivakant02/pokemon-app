@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-function PokemonList() {
-    const DEFAULT_URL = 'https://pokeapi.co/api/v2/pokemon'
+function PokemonList(DEFAULT_URL) {
+    
     
     
     const [pokemonListState, setPokemonListState] = useState({
