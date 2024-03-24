@@ -7,7 +7,7 @@ function PokemonList() {
     const [pokemonListState,setPokemonListState]=usePokemonList(DEFAULT_URL)
     return (
         <div className='pokeListWrapper'>
-            <div id='poke-header'>Pokemon List</div>
+            <div id='poke-header'>Pokemon List here</div>
 
             <div className='page-control'>
                 <button onClick={()=>setPokemonListState({...pokemonListState,pokedexurl:pokemonListState.prevURL})}>Prev</button>
