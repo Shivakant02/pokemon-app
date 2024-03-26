@@ -1,8 +1,10 @@
 // import React from 'react'
+import useDebounce from '../../hooks/useDebounce'
 import './search.css'
 
 
-function Search() {
+function Search({ updateSearchTerm }) {
+  const debounceUpdateSearch=useDebounce((e)=>updateSearchTerm(e.target.value))
     return(
       <div className='SearchBox' >
           <input
@@ -10,7 +12,8 @@ function Search() {
           
               
               type="text"
-              placeholder="Which Pokemon are you  looking for?"
+          placeholder="Which Pokemon are you  looking for?"
+          onChange={debounceUpdateSearch}
           />
     </div>
   )
