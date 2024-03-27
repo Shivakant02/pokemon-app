@@ -10,7 +10,7 @@ function PokemonDetails({pokemonName}) {
         <>
             <h1>
                 <Link to="/">
-                Pokedex
+                Pokedex dashboard
                 </Link>
             </h1>
 
